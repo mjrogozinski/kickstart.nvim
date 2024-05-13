@@ -386,7 +386,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>C', ':e $MYVIMRC<CR>', { desc = 'edit [C]onfiguration' })
 
       -- Slightly advanced example of overriding default behavior and theme
-      vim.keymap.set('n', '<leader>/', function()
+      vim.keymap.set('n', '<leader>?', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
@@ -837,7 +837,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'cpp', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -890,7 +890,7 @@ require('lazy').setup({
   -- { import = 'custom.plugins' },
   {
     'echasnovski/mini.files',
-    version = '*',
+    version = false,
     keys = {
       {
         '<leader>e',
@@ -901,9 +901,14 @@ require('lazy').setup({
         desc = '[e]xplorer',
       },
     },
-    config = function()
-      require('mini.files').setup()
-    end,
+    opts = {},
+  },
+
+  -- enter start jumping
+  {
+    'echasnovski/mini.jump2d',
+    version = false,
+    opts = {},
   },
 }, {
   ui = {
