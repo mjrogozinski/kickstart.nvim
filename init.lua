@@ -130,11 +130,11 @@ vim.opt.smartcase = true
 vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 0
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -890,28 +890,10 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
-  {
-    'echasnovski/mini.files',
-    version = false,
-    keys = {
-      {
-        '<leader>e',
-        function()
-          MiniFiles.open()
-        end,
-        mode = '',
-        desc = '[e]xplorer',
-      },
-    },
-    opts = {},
-  },
+  require 'kickstart.plugins.mini.files',
 
-  -- enter start jumping
-  {
-    'echasnovski/mini.jump2d',
-    version = false,
-    opts = {},
-  },
+  -- enter to start jumping
+  require 'kickstart.plugins.mini.jump2d',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
