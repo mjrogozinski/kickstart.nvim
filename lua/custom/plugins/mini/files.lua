@@ -11,9 +11,5 @@ return {
       desc = '[e]xplorer',
     },
   },
-  opts = {
-    mappings = {
-      close = '<ESC>',
-    },
-  },
+  opts = {},
 }
