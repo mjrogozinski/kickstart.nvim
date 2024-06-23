@@ -146,6 +146,12 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.autoindent = true
+
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
 
@@ -894,6 +900,7 @@ require('lazy').setup({
 
   -- enter to start jumping
   require 'kickstart.plugins.mini.jump2d',
+  require 'custom.plugins.cmake',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
