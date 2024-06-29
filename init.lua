@@ -392,6 +392,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       vim.keymap.set('n', '<leader>C', ':e $MYVIMRC<CR>', { desc = '[C]onfiguration Edit' })
+      vim.keymap.set('n', '<leader>o', ':ClangdSwitchSourceHeader<CR>', { desc = 'switch header-source' })
       vim.keymap.set('n', '<leader>h', ':noh<CR>', { desc = '[N][o] [h]ighlight' })
 
       -- Slightly advanced example of overriding default behavior and theme
