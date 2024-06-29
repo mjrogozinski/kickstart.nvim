@@ -392,9 +392,11 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<C-PageDown>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
       vim.keymap.set('n', '<leader>C', ':e $MYVIMRC<CR>', { desc = '[C]onfiguration Edit' })
       vim.keymap.set('n', '<leader>o', ':ClangdSwitchSourceHeader<CR>', { desc = 'switch header-source' })
+      vim.keymap.set('n', '<F4>', ':ClangdSwitchSourceHeader<CR>', { desc = 'switch header-source' })
       vim.keymap.set('n', '<leader>h', ':noh<CR>', { desc = '[N][o] [h]ighlight' })
 
       -- Slightly advanced example of overriding default behavior and theme
@@ -484,6 +486,7 @@ require('lazy').setup({
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
           map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('<F2>', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
           -- Find references for the word under your cursor.
           map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
