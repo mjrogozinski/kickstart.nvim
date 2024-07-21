@@ -8,4 +8,7 @@ return {
   {
     'chriskempson/base16-vim',
   },
+  {
+    'catppuccin/nvim',
+  },
 }
