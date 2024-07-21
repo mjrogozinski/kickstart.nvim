@@ -1,5 +1,5 @@
 -- makes * and # work on visual mode too.
-vim.api.nvim_exec(
+vim.api.nvim_exec2(
   [[
   function! g:VSetSearch(cmdtype)
     let temp = @s
@@ -11,5 +11,5 @@ vim.api.nvim_exec(
   xnoremap * :<C-u>call g:VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
   xnoremap # :<C-u>call g:VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
 ]],
-  false
+  {}
 )
