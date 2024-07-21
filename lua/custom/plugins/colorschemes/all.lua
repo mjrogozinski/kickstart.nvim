@@ -11,4 +11,10 @@ return {
   {
     'catppuccin/nvim',
   },
+  {
+    'savq/melange-nvim',
+  },
+  {
+    'kepano/flexoki-neovim',
+  },
 }
