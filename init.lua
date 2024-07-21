@@ -783,6 +783,7 @@ require('lazy').setup({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'buffer' },
         },
       }
     end,
@@ -923,6 +924,8 @@ require('lazy').setup({
     },
   },
 })
+
+require 'custom.code.multi-line-star'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
