@@ -116,7 +116,8 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
-vim.opt.breakindent = false
+-- Enable break indent
+vim.opt.breakindent = true
 
 -- Save undo history
 vim.opt.undofile = true
@@ -148,8 +149,8 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
-vim.opt.smartindent = true
-vim.opt.autoindent = true
+vim.opt.smartindent = false
+vim.opt.autoindent = false
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -253,19 +254,19 @@ require('lazy').setup({
   --    require('gitsigns').setup({ ... })
   --
   -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-
+  -- { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  --   'lewis6991/gitsigns.nvim',
+  --   opts = {
+  --     signs = {
+  --       add = { text = '+' },
+  --       change = { text = '~' },
+  --       delete = { text = '_' },
+  --       topdelete = { text = '‾' },
+  --       changedelete = { text = '~' },
+  --     },
+  --   },
+  -- },
+  --
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
   -- This is often very useful to both group configuration, as well as handle
@@ -364,7 +365,12 @@ require('lazy').setup({
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          colorscheme = {
+            enable_preview = true,
+          },
+        },
+
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -386,6 +392,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sc', builtin.commands, { desc = '[S]earch [C]ommands' })
+      vim.keymap.set('n', '<leader>sC', builtin.colorscheme, { desc = '[S]earch [C]olorschemes' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
@@ -394,7 +401,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>C', ':e $MYVIMRC<CR>', { desc = '[C]onfiguration Edit' })
       vim.keymap.set('n', '<leader>o', ':ClangdSwitchSourceHeader<CR>', { desc = 'switch header-source' })
       vim.keymap.set('n', '<F4>', ':ClangdSwitchSourceHeader<CR>', { desc = 'switch header-source' })
-      vim.keymap.set('n', '<leader>h', ':noh<CR>', { desc = '[N][o] [h]ighlight' })
+      -- vim.keymap.set('n', '<leader>h', ':noh<CR>', { desc = '[N][o] [h]ighlight' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>?', function()
@@ -890,12 +897,12 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -904,6 +911,7 @@ require('lazy').setup({
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.plugins' },
   { import = 'custom.plugins.mini' },
+  { import = 'custom.plugins.colorschemes' },
   require 'custom.plugins.clipboard.config',
   {
     'zbirenbaum/copilot.lua',
@@ -962,5 +970,7 @@ vim.g.clipboard = {
   copy = { ['+'] = copy, ['*'] = copy },
   paste = { ['+'] = paste, ['*'] = paste },
 }
+require 'custom.code.multi-line-star'
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
