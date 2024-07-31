@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -360,11 +360,19 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          -- Default configuration for telescope goes here:
+          -- config_key = value,
+          mappings = {
+            n = {
+              ['<c-d>'] = require('telescope.actions').delete_buffer,
+            }, -- n
+            i = {
+              ['<C-h>'] = 'which_key',
+              ['<c-d>'] = require('telescope.actions').delete_buffer,
+            }, -- i
+          }, -- mappings
+        }, -- defaults
         pickers = {
           colorscheme = {
             enable_preview = true,
@@ -913,28 +921,7 @@ require('lazy').setup({
   { import = 'custom.plugins.mini' },
   { import = 'custom.plugins.colorschemes' },
   require 'custom.plugins.clipboard.config',
-  {
-    'zbirenbaum/copilot.lua',
-    lazy = false,
-    cmd = 'Copilot',
-    event = 'InsertEnter',
-    opts = {},
-  },
-  {
-    'zbirenbaum/copilot-cmp',
-    lazy = false,
-    after = { 'copilot.lua' },
-    opts = {},
-  },
-  {
-    'CopilotC-Nvim/CopilotChat.nvim',
-    branch = 'canary',
-    dependencies = {
-      { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
-      { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
-    },
-    opts = {},
-  },
+  require 'custom.plugins.copilot.copilot-config',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -957,20 +944,9 @@ require('lazy').setup({
   },
 })
 
-local function copy(lines, _)
-  require('osc52').copy(table.concat(lines, '\n'))
-end
-
-local function paste()
-  return { vim.fn.split(vim.fn.getreg '', '\n'), vim.fn.getregtype '' }
-end
-
-vim.g.clipboard = {
-  name = 'osc52',
-  copy = { ['+'] = copy, ['*'] = copy },
-  paste = { ['+'] = paste, ['*'] = paste },
-}
 require 'custom.code.multi-line-star'
+require 'custom.code.clipboard-config'
+require 'custom.code.select-colorscheme'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
