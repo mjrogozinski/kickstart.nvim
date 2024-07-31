@@ -360,6 +360,11 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
+        -- defaults = {
+        --   mappings = {
+        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+        --   },
+        -- },
         defaults = {
           -- Default configuration for telescope goes here:
           -- config_key = value,
@@ -920,6 +925,7 @@ require('lazy').setup({
   { import = 'custom.plugins' },
   { import = 'custom.plugins.mini' },
   { import = 'custom.plugins.colorschemes' },
+  { import = 'custom.plugins.haskell' },
   require 'custom.plugins.clipboard.config',
   require 'custom.plugins.copilot.copilot-config',
 }, {
