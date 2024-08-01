@@ -26,3 +26,7 @@ require('tasks').setup {
     return require('dap').repl.open()
   end, -- Command to run after starting DAP session. You can set it to `false` if you don't want to open anything or `require('dapui').open` if you are using https://github.com/rcarriga/nvim-dap-ui
 }
+
+vim.keymap.set('n', '<c-b>', ':Task start cmake build_all<CR>', { silent = true, desc = 'Cmake build all' })
+vim.keymap.set('n', '<leader>cb', ':Task start cmake build_all<CR>', { silent = true, desc = '[C]make [b]uild all' })
+vim.keymap.set('n', '<leader>cl', ':cclose<CR>', { silent = true, desc = '[C][l]ose quickfix list' })
