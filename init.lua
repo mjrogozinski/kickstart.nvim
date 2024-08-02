@@ -664,7 +664,7 @@ require('lazy').setup({
     lazy = false,
     keys = {
       {
-        '<leader>f',
+        '<leader>ff',
         function()
           require('conform').format { async = true, lsp_fallback = true }
         end,
@@ -956,5 +956,7 @@ require 'custom.code.select-colorscheme'
 require 'custom.code.nvim-tasks-init'
 require 'custom.code.make-session'
 
+vim.keymap.set('n', '<leader>bc', ':bp<BAR>bd#<CR>', { silent = true, desc = 'close buffer' })
+vim.keymap.set('n', '<leader>fg', ':%!rg ', { desc = 'file grep' })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

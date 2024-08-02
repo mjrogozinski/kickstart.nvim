@@ -1,9 +1,40 @@
 local Path = require 'plenary.path'
+--- chat gpt
+-- Function to check if a given directory contains the "build" folder
+function Contains_build_folder(dir)
+  local build_path = dir .. '/build'
+  local file = io.open(build_path, 'r')
+  if file then
+    file:close()
+    return true
+  else
+    return false
+  end
+end
+
+-- Function to get the first parent directory containing the "build" folder
+function Find_build_directory(cwd)
+  local function get_parent_directory(path)
+    local parent_dir = path:match '(.*)/[^/]*$'
+    return parent_dir
+  end
+
+  local current_dir = cwd
+  while current_dir and current_dir ~= '' do
+    if Contains_build_folder(current_dir) then
+      return current_dir .. '/build'
+    end
+    current_dir = get_parent_directory(current_dir)
+  end
+  return nil -- Return nil if no such directory is found
+end
+--- /chat gpt
+
 require('tasks').setup {
   default_params = { -- Default module parameters with which `neovim.json` will be created.
     cmake = {
       cmd = 'cmake', -- CMake executable to use, can be changed using `:Task set_module_param cmake cmd`.
-      build_dir = tostring(Path:new('{cwd}', 'build', '{os}-{build_type}')), -- Build directory. The expressions `{cwd}`, `{os}` and `{build_type}` will be expanded with the corresponding text values. Could be a function that return the path to the build directory.
+      build_dir = Find_build_directory(vim.fn.getcwd()), -- Build directory. The expressions `{cwd}`, `{os}` and `{build_type}` will be expanded with the corresponding text values. Could be a function that return the path to the build directory.
       build_type = 'Debug', -- Build type, can be changed using `:Task set_module_param cmake build_type`.
       dap_name = 'codelldb', -- DAP configuration name from `require('dap').configurations`. If there is no such configuration, a new one with this name as `type` will be created.
       args = { -- Task default arguments.
