@@ -955,8 +955,8 @@ require 'custom.code.clipboard-config'
 require 'custom.code.select-colorscheme'
 require 'custom.code.nvim-tasks-init'
 require 'custom.code.make-session'
+require 'custom.code.close-buffer'
+require 'custom.code.file-grep'
 
-vim.keymap.set('n', '<leader>bc', ':bp<BAR>bd#<CR>', { silent = true, desc = 'close buffer' })
-vim.keymap.set('n', '<leader>fg', ':%!rg ', { desc = 'file grep' })
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
