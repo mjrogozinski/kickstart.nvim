@@ -10,6 +10,14 @@ return {
       mode = '',
       desc = '[e]xplorer',
     },
+    {
+      '<leader>E',
+      function()
+        MiniFiles.open()
+      end,
+      mode = '',
+      desc = '[e]xplorer in cwd',
+    },
   },
   opts = {},
 }
