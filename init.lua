@@ -926,6 +926,7 @@ require('lazy').setup({
   { import = 'custom.plugins.mini' },
   { import = 'custom.plugins.colorschemes' },
   { import = 'custom.plugins.haskell' },
+  { import = 'custom.plugins.rust' },
   require 'custom.plugins.clipboard.config',
   require 'custom.plugins.copilot.copilot-config',
 }, {
