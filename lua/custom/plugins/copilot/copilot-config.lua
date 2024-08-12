@@ -1,16 +1,19 @@
 return {
+  -- {
+  --   'zbirenbaum/copilot.lua',
+  --   lazy = false,
+  --   cmd = 'Copilot',
+  --   event = 'InsertEnter',
+  --   opts = {},
+  -- },
+  -- {
+  --   'zbirenbaum/copilot-cmp',
+  --   lazy = false,
+  --   after = { 'copilot.lua' },
+  --   opts = {},
+  -- },
   {
-    'zbirenbaum/copilot.lua',
-    lazy = false,
-    cmd = 'Copilot',
-    event = 'InsertEnter',
-    opts = {},
-  },
-  {
-    'zbirenbaum/copilot-cmp',
-    lazy = false,
-    after = { 'copilot.lua' },
-    opts = {},
+    'github/copilot.vim',
   },
   {
     'CopilotC-Nvim/CopilotChat.nvim',
