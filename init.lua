@@ -921,7 +921,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'cpp', 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -967,6 +967,7 @@ require('lazy').setup({
   { import = 'custom.plugins.colorschemes' },
   { import = 'custom.plugins.haskell' },
   { import = 'custom.plugins.rust' },
+  { import = 'custom.plugins.neotest.deps' },
   require 'custom.plugins.clipboard.config',
   require 'custom.plugins.copilot.copilot-config',
 }, {
@@ -999,6 +1000,7 @@ require 'custom.code.make-session'
 require 'custom.code.close-buffer'
 require 'custom.code.file-grep'
 require 'custom.code.execute-lua-file'
+require 'custom.code.neotest-start-config'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
