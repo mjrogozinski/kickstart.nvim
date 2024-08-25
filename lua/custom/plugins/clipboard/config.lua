@@ -24,6 +24,6 @@ return {
       mode = 'n',
       desc = 'copy to system clipboard',
     },
-    { '<leader>cc', '"+yy', mode = 'n', desc = 'copy to system clipboard 2' },
+    -- { '<leader>cc', '"+yy', mode = 'n', desc = 'copy to system clipboard 2' },
   },
 }
