@@ -59,5 +59,10 @@ require('tasks').setup {
 }
 
 vim.keymap.set('n', '<c-b>', ':Task start cmake build_all<CR>', { silent = true, desc = 'Cmake build all' })
+vim.keymap.set('n', '<leader>cc', ':Task start cmake configure<CR>', { silent = true, desc = '[C]make [c]onfigure' })
+vim.keymap.set('n', '<leader>cBt', ':Task set_module_param cmake build_type<CR>', { silent = true, desc = '[C]make [B]uild [t]ype' })
 vim.keymap.set('n', '<leader>cb', ':Task start cmake build_all<CR>', { silent = true, desc = '[C]make [b]uild all' })
+vim.keymap.set('n', '<leader>cR', ':Task start cmake run<CR>', { silent = true, desc = '[C]make [R]un' })
+vim.keymap.set('n', '<leader>cD', ':Task start cmake debug<CR>', { silent = true, desc = '[C]make [D]ebug' })
+vim.keymap.set('n', '<leader>ct', ':Task set_module_param cmake target<CR>', { silent = true, desc = '[C]make select [t]arget' })
 vim.keymap.set('n', '<leader>cl', ':cclose<CR>', { silent = true, desc = '[C][l]ose quickfix list' })
