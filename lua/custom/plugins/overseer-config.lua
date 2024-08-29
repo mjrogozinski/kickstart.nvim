@@ -1,1 +1,1 @@
-return { 'stevearc/overseer.nvim' }
+return { 'stevearc/overseer.nvim', opts = { templates = { 'builtin', 'user.run_script', 'user.compile_cpp' } } }
