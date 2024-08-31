@@ -6,7 +6,8 @@ require('neotest').setup {
     require 'neotest-gtest',
     require 'neotest-plenary',
     require 'neotest-vim-test' {
-      ignore_file_types = { 'python', 'vim', 'lua' },
+      ignore_file_types = { 'python', 'vim', 'lua', 'cpp' },
     },
+    require('neotest-gtest').setup {},
   },
 }
