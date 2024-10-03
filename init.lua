@@ -995,12 +995,12 @@ require('lazy').setup({
 require 'custom.code.multi-line-star'
 require 'custom.code.clipboard-config'
 require 'custom.code.select-colorscheme'
-require 'custom.code.nvim-tasks-init'
 require 'custom.code.make-session'
 require 'custom.code.close-buffer'
 require 'custom.code.file-grep'
 require 'custom.code.execute-lua-file'
 require 'custom.code.neotest-start-config'
+require 'custom.code.overseer-keybindings'
 require 'custom.code.close-qflist'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
