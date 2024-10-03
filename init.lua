@@ -1001,6 +1001,7 @@ require 'custom.code.close-buffer'
 require 'custom.code.file-grep'
 require 'custom.code.execute-lua-file'
 require 'custom.code.neotest-start-config'
+require 'custom.code.close-qflist'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
