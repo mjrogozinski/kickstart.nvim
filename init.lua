@@ -993,7 +993,6 @@ require('lazy').setup({
 })
 
 require 'custom.code.multi-line-star'
-require 'custom.code.clipboard-config'
 require 'custom.code.select-colorscheme'
 require 'custom.code.make-session'
 require 'custom.code.close-buffer'
