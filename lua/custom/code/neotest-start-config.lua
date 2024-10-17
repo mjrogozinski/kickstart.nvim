@@ -8,6 +8,10 @@ require('neotest').setup {
     require 'neotest-vim-test' {
       ignore_file_types = { 'python', 'vim', 'lua', 'cpp' },
     },
-    require('neotest-gtest').setup {},
+    require('neotest-gtest').setup {
+      is_test_file = function(filename)
+        return vim.endswith(filename, '.cpp')
+      end,
+    },
   },
 }
