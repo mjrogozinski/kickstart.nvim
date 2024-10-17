@@ -19,5 +19,7 @@ return {
     -- Yanky previous/next entry mappings
     { '<c-p>', '<Plug>(YankyPreviousEntry)', mode = 'n' },
     { '<c-n>', '<Plug>(YankyNextEntry)', mode = 'n' },
+    { '=p', '<Plug>(YankyPutAfterFilter)', mode = 'n' },
+    { '=P', '<Plug>(YankyPutBeforeFilter)', mode = 'n' },
   },
 }
