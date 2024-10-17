@@ -1003,6 +1003,7 @@ require 'custom.code.overseer-keybindings'
 require 'custom.code.close-qflist'
 require 'custom.code.ts-textobjects'
 require 'custom.code.osc52-provider'
+require 'custom.code.hydra.telescope-mode'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
