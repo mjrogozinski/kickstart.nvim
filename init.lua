@@ -444,10 +444,6 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
       vim.keymap.set('n', '<C-PageDown>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-
-      vim.keymap.set('n', '<leader>C', ':e $MYVIMRC<CR>', { desc = '[C]onfiguration Edit' })
-      vim.keymap.set('n', '<leader>o', ':ClangdSwitchSourceHeader<CR>', { silent = true, desc = 'switch header-source' })
-      vim.keymap.set('n', '<F4>', ':ClangdSwitchSourceHeader<CR>', { silent = true, desc = 'switch header-source' })
       -- vim.keymap.set('n', '<leader>h', ':noh<CR>', { desc = '[N][o] [h]ighlight' })
 
       -- Slightly advanced example of overriding default behavior and theme
@@ -1003,6 +999,8 @@ require 'custom.code.ts-textobjects'
 require 'custom.code.osc52-provider'
 require 'custom.code.hydra.telescope-mode'
 require 'custom.code.move-line'
+require 'custom.code.cpp.cpp-keymaps'
+require 'custom.code.edit-configuration'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
