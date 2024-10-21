@@ -36,6 +36,30 @@ return {
       desc = 'Neotest run, run test, integration run',
     },
     {
+      '<leader>ia',
+      function()
+        require('neotest').run.attach()
+      end,
+      mode = '',
+      desc = 'Neotest attach',
+    },
+    {
+      '<leader>ix',
+      function()
+        require('neotest').run.stop()
+      end,
+      mode = '',
+      desc = 'Neotest stop nearest test',
+    },
+    {
+      '<leader>iR',
+      function()
+        require('neotest').run.run { strategy = 'dap' }
+      end,
+      mode = '',
+      desc = 'Neotest run (debug), run test, integration run',
+    },
+    {
       '<leader>if',
       function()
         require('neotest').run.run(vim.fn.expand '%')
