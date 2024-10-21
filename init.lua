@@ -962,7 +962,6 @@ require('lazy').setup({
   { import = 'custom.plugins.colorschemes' },
   { import = 'custom.plugins.haskell' },
   { import = 'custom.plugins.rust' },
-  { import = 'custom.plugins.neotest.deps' },
   require 'custom.plugins.copilot.copilot-config',
 }, {
   ui = {

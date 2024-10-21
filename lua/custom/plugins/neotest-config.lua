@@ -8,5 +8,6 @@ return {
     'nvim-treesitter/nvim-treesitter',
     'nvim-neotest/neotest-python',
     'alfaix/neotest-gtest',
+    'nvim-neotest/neotest-vim-test',
   },
 }
