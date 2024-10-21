@@ -64,4 +64,4 @@ return {
 -- ir works because fingers can move to i and r in parallel
 --
 -- let's say in this case i stands for integration (like in integration tests)
--- but really it's because of where keys are located on the keyboard (:
+-- but really it's because of where these keys are located on the keyboard (:
