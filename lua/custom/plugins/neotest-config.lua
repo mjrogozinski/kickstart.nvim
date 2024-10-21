@@ -10,4 +10,58 @@ return {
     'alfaix/neotest-gtest',
     'nvim-neotest/neotest-vim-test',
   },
+  keys = {
+    {
+      '<leader>is',
+      function()
+        require('neotest').summary.toggle()
+      end,
+      mode = '',
+      desc = 'Neotest summary, open tests, integration summary',
+    },
+    {
+      '<leader>io',
+      function()
+        require('neotest').summary.toggle()
+      end,
+      mode = '',
+      desc = 'Neotest summary, open tests, integration summary',
+    },
+    {
+      '<leader>ir',
+      function()
+        require('neotest').run.run()
+      end,
+      mode = '',
+      desc = 'Neotest run, run test, integration run',
+    },
+    {
+      '<leader>if',
+      function()
+        require('neotest').run.run(vim.fn.expand '%')
+      end,
+      mode = '',
+      desc = 'Neotest run, run test file, integration for file',
+    },
+    {
+      '<leader>it',
+      function()
+        require('neotest').output_panel.toggle()
+      end,
+      mode = '',
+      desc = 'Neotest terminal, integration terminal, tests output',
+    },
+  },
 }
+
+-- here maybe a comment about philosophy of leader shortcuts
+-- initially I wanted to have leader cto, but it is too long
+-- then I tried leader tr, leader tf and have come up with this idea:
+-- two letters need to be pressed at least by different fingers
+-- preferably with different hands
+-- tr does not work, as the same finger needs to move from t to r,
+-- making the whole sequence ... sequential :D
+-- ir works because fingers can move to i and r in parallel
+--
+-- let's say in this case i stands for integration (like in integration tests)
+-- but really it's because of where keys are located on the keyboard (:
