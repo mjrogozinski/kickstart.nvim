@@ -25,6 +25,7 @@ return {
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
     'mfussenegger/nvim-dap-python',
+    'theHamsta/nvim-dap-virtual-text',
   },
   keys = function(_, keys)
     local dap = require 'dap'
