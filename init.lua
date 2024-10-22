@@ -991,7 +991,6 @@ require 'custom.code.select-colorscheme'
 require 'custom.code.make-session'
 require 'custom.code.close-buffer'
 require 'custom.code.file-grep'
-require 'custom.code.execute-lua-file'
 require 'custom.code.neotest-start-config'
 require 'custom.code.overseer-keybindings'
 require 'custom.code.close-qflist'
@@ -1002,6 +1001,8 @@ require 'custom.code.move-line'
 require 'custom.code.cpp.cpp-keymaps'
 require 'custom.code.edit-configuration'
 require 'custom.code.clangd-capabilities-fix'
+
+require 'custom.code.debug.lua-debug'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
