@@ -998,7 +998,6 @@ require 'custom.code.ts-textobjects'
 require 'custom.code.osc52-provider'
 require 'custom.code.hydra.telescope-mode'
 require 'custom.code.move-line'
-require 'custom.code.cpp.cpp-keymaps'
 require 'custom.code.edit-configuration'
 require 'custom.code.clangd-capabilities-fix'
 
