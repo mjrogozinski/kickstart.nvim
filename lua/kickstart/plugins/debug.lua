@@ -26,6 +26,7 @@ return {
     'leoluz/nvim-dap-go',
     'mfussenegger/nvim-dap-python',
     'theHamsta/nvim-dap-virtual-text',
+    'jbyuki/one-small-step-for-vimkind',
   },
   keys = function(_, keys)
     local dap = require 'dap'
