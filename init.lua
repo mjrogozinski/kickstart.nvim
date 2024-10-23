@@ -1000,6 +1000,7 @@ require 'custom.code.hydra.telescope-mode'
 require 'custom.code.move-line'
 require 'custom.code.edit-configuration'
 require 'custom.code.clangd-capabilities-fix'
+require 'custom.code.mini-surround-fix'
 
 require 'custom.code.debug.lua-debug'
 
