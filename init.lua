@@ -152,8 +152,8 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
-vim.opt.smartindent = false
-vim.opt.autoindent = false
+vim.opt.smartindent = true
+vim.opt.autoindent = true
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
