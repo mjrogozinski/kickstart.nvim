@@ -3,7 +3,7 @@ return {
   opts = { rename_files = false },
   keys = {
     {
-      '<leader>cr',
+      '<leader>cq',
       function()
         require('replacer').run()
       end,
