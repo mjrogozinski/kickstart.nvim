@@ -1006,6 +1006,7 @@ require 'custom.code.mini-surround-fix'
 require 'custom.code.debug.lua-debug'
 
 require 'custom.code.nixd-config'
+require 'custom.code.sane-change'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
