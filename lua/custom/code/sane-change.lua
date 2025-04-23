@@ -19,7 +19,8 @@ set_paste_inside_binding_for '}'
 -- I have to add unit tests and implement it propertly
 -- the idea is to just have q to match anything with 'inside'
 -- and paste over the most outer the cursor is inside of
---
+-- of course it has to check which paren/quote the cursor is inside of
+-- instead of trying every one in this order
 vim.keymap.set('n', '<leader>pq', function()
   local textobjects = { '{', '(', '[', '<', "'", '"' }
 
