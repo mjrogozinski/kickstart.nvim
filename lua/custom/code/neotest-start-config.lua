@@ -2,6 +2,8 @@ require('neotest').setup {
   adapters = {
     require 'neotest-python' {
       dap = { justMyCode = false },
+      python = 'python3',
+      runner = 'pytest',
     },
     require 'neotest-busted',
     require 'neotest-vim-test' {
