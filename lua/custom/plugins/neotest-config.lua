@@ -1,3 +1,5 @@
+local save_buffers = require 'custom.code.save-writable-buffers'
+
 return {
   'nvim-neotest/neotest',
   dependencies = {
@@ -62,6 +64,7 @@ return {
     {
       '<leader>if',
       function()
+        save_buffers()
         require('neotest').run.run(vim.fn.expand '%')
       end,
       mode = '',
