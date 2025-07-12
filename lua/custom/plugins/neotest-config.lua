@@ -32,6 +32,7 @@ return {
     {
       '<leader>ir',
       function()
+        save_buffers()
         require('neotest').run.run()
       end,
       mode = '',
@@ -40,6 +41,7 @@ return {
     {
       '<leader>ia',
       function()
+        save_buffers()
         require('neotest').run.attach()
       end,
       mode = '',
@@ -48,6 +50,7 @@ return {
     {
       '<leader>ix',
       function()
+        save_buffers()
         require('neotest').run.stop()
       end,
       mode = '',
@@ -56,6 +59,7 @@ return {
     {
       '<leader>iR',
       function()
+        save_buffers()
         require('neotest').run.run { strategy = 'dap' }
       end,
       mode = '',
