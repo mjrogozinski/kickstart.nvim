@@ -1,5 +1,5 @@
 return {
   'echasnovski/mini.ai',
   version = false,
-  opts = {},
+  opts = { custom_textobjects = {} },
 }
