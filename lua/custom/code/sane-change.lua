@@ -4,34 +4,11 @@ end
 
 set_paste_inside_binding_for 'w'
 set_paste_inside_binding_for 'W'
-set_paste_inside_binding_for '"'
-set_paste_inside_binding_for "'"
-set_paste_inside_binding_for '('
-set_paste_inside_binding_for ')'
-set_paste_inside_binding_for '['
-set_paste_inside_binding_for ']'
 set_paste_inside_binding_for '<'
 set_paste_inside_binding_for '>'
-set_paste_inside_binding_for '{'
-set_paste_inside_binding_for '}'
 
--- this is a chatgpt-generated prototype
--- I have to add unit tests and implement it propertly
--- the idea is to just have q to match anything with 'inside'
--- and paste over the most outer the cursor is inside of
--- of course it has to check which paren/quote the cursor is inside of
--- instead of trying every one in this order
+-- for some reason just typing worked, but mapping did not
 vim.keymap.set('n', '<leader>pq', function()
-  local textobjects = { '{', '(', '[', '<', "'", '"' }
-
-  for _, char in ipairs(textobjects) do
-    local ok = pcall(function()
-      vim.cmd('normal! "_di' .. char .. 'P')
-    end)
-    if ok then
-      return
-    end
-  end
-
-  print 'No surrounding pair found.'
-end, { desc = 'Replace inside surrounding quotes/brackets with clipboard' })
+  local keys = vim.api.nvim_replace_termcodes('"_diqP', true, false, true)
+  vim.api.nvim_feedkeys(keys, 'x', false)
+end, { desc = 'paste over inside quote, replace inside quote' })
